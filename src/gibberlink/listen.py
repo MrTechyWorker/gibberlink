@@ -2,6 +2,7 @@ import numpy as np
 import sounddevice as sd
 import scipy.signal as signal
 from loguru import logger
+import string
 
 
 class Listener:
@@ -20,6 +21,9 @@ class Listener:
 
         self.N_SAMPLES = int(self.SAMPLE_RATE * self.DURATION)
         self.INV_FREQ_MAP = {v: k for k, v in self.FREQ_MAP.items()}
+
+    def _is_valid_char(self, char):
+        return char in string.printable and char not in string.whitespace
 
     def listen(self) -> str:
         binary_string = ""
@@ -49,7 +53,7 @@ class Listener:
                 char_bin = binary_string[:8]
                 binary_string = binary_string[8:]
                 decoded_char: str = chr(int(char_bin, 2))
-                if r'\x' not in decoded_char:
+                if self._is_valid_char(decoded_char):
                     decoded_message += decoded_char
                 logger.info(f"Decoded: '{decoded_char}'") if decoded_char != '\x00' else ...
 
