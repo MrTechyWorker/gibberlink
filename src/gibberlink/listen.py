@@ -49,7 +49,7 @@ class Listener:
                 char_bin = binary_string[:8]
                 binary_string = binary_string[8:]
                 decoded_char: str = chr(int(char_bin, 2))
-                if '\x' not in decoded_char:
+                if r'\x' not in decoded_char:
                     decoded_message += decoded_char
                 logger.info(f"Decoded: '{decoded_char}'") if decoded_char != '\x00' else ...
 
