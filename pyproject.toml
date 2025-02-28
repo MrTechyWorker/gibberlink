@@ -1,0 +1,20 @@
+[project]
+name = "gibberlink"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "loguru>=0.7.3",
+    "numpy>=2.2.3",
+    "scipy>=1.15.2",
+    "sounddevice>=0.5.1",
+    "toml>=0.10.2",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/gibberlink"]
