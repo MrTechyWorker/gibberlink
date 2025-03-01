@@ -95,3 +95,12 @@ The Listener object will receive the same arguments as the Talker.
    - Basic Digital Signal Processing
    - Sampling & Waveforms
    - Python Libraries – numpy, sounddevice, scipy
+## Author:
+
+Shashank Kanna R [linkedin](https://www.linkedin.com/in/shashank-kanna/), [github](https://github.com/MrTechyWorker)
+
+### Huge Thanks To
+
+Anton Pidkuiko: [threads](https://www.threads.net/@anton10xr), [linkedin](https://www.linkedin.com/in/anton-pidkuiko-7535409b), [github](https://github.com/anton10xr)
+
+Boris Starkov: [linkedin](https://www.linkedin.com/in/boris-starkov/), [github](https://github.com/PennyroyalTea)
