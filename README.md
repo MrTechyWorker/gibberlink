@@ -1,4 +1,4 @@
-# 📂 GibberLink
+# 📂 GibberLink [For Pythonista!]
 
 Having inspired by the viral gibberlink mode video : 
 
