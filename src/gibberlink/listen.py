@@ -23,7 +23,7 @@ class Listener:
         self.INV_FREQ_MAP = {v: k for k, v in self.FREQ_MAP.items()}
 
     def _is_valid_char(self, char):
-        return char in string.printable and char not in string.whitespace
+        return char in string.printable
 
     def listen(self) -> str:
         binary_string = ""
