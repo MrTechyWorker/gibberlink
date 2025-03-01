@@ -6,7 +6,7 @@ import string
 
 
 class Listener:
-    def __init__(self):
+    def __init__(self, debug_mode : bool = True, message_end_char : str = "*"):
         self.SAMPLE_RATE = 44100
         self.DURATION = 0.09
         self.FREQ_MAP : dict = {
@@ -15,9 +15,9 @@ class Listener:
             '1000': 4500, '1001': 5000, '1010': 5500, '1011': 6000,
             '1100': 6500, '1101': 7000, '1110': 7500, '1111': 8000
         }
-        self.DEBUG_MODE = False
+        self.DEBUG_MODE = debug_mode
         self.CHUNK_SIZE = 4
-        self.MESSAGE_END_CHAR = '*'
+        self.MESSAGE_END_CHAR = message_end_char
 
         self.N_SAMPLES = int(self.SAMPLE_RATE * self.DURATION)
         self.INV_FREQ_MAP = {v: k for k, v in self.FREQ_MAP.items()}

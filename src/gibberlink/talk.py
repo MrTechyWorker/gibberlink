@@ -4,7 +4,7 @@ from loguru import logger
 import numpy as np
 
 class Talker:
-    def __init__(self, debug_mode : bool = True):
+    def __init__(self, debug_mode : bool = True, message_end_char : str = "*"):
         self.DEBUG_MODE = debug_mode
         
         self.SAMPLE_RATE = 44100
@@ -16,7 +16,7 @@ class Talker:
             '1100': 6500, '1101': 7000, '1110': 7500, '1111': 8000
         }
         self.CHUNK_SIZE = 4
-        self.MESSAGE_END_CHAR = '***'
+        self.MESSAGE_END_CHAR = message_end_char * 3 # For better recognition to the listener of end messsage
         self.PRECOMPUTED_TONES = {freq: 0.5 * np.sin(2 * np.pi * freq * np.linspace(0, self.DURATION, int(self.SAMPLE_RATE * self.DURATION), endpoint=False)) for freq in self.FREQ_MAP.values()}
 
     def talk(self, message: str) -> None:
